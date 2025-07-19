@@ -4,7 +4,7 @@ import 'package:my_portfolio/res/interfaces/image_type.dart';
 
 final class AssetHeaderBg extends ImageInterface {
   @override
-  String get path => 'header-bg.png';
+  String get path => makePath('header-bg.png');
   @override
   ImageType get type => ImageType.imageAsset;
 
