@@ -5,7 +5,7 @@ import 'package:my_portfolio/res/interfaces/image_type.dart';
 
 final class AssetSubtitle extends ImageInterface {
   @override
-  String get path => 'subtitle.svg';
+  String get path => makePath('subtitle.svg');
   @override
   ImageType get type => ImageType.svgAsset;
 

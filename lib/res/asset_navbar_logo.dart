@@ -5,7 +5,7 @@ import 'package:my_portfolio/res/interfaces/image_type.dart';
 
 final class AssetNavbarLogo extends ImageInterface {
   @override
-  String get path => 'navbar-logo.svg';
+  String get path => makePath('navbar-logo.svg');
   @override
   ImageType get type => ImageType.svgAsset;
 
