@@ -63891,7 +63891,7 @@ s.toString
 return B.d.b_(r,s)},
 $S:391}
 A.B6.prototype={
-O(a){return A.aeI("navbar-logo.svg",null)}}
+O(a){return A.aeI("assets/navbar-logo.svg",null)}}
 A.kN.prototype={
 H(){return"Section."+this.b}}
 A.xh.prototype={
@@ -63935,7 +63935,7 @@ O(a){return A.aeL(A.Hs("CONTACT"),this.c,null)}}
 A.Dq.prototype={
 O(a){var s=null,r=this.c,q=A.ct(a,s,t.w).w.a.a*r.gjN()/r.gjZ()
 r=t.V
-return new A.wx(this.d,this.e,new A.tQ(A.wE(B.a5,A.b([new A.u8(A.atI(s,s,new A.ru("header-bg.png",s,s)),s),new A.j5(new A.br(0,q*0.4,0,0),A.rX(A.b([A.aeI("subtitle.svg",600),A.aeI("title.svg",1200)],r),B.aE),s)],r),B.eO),B.z7,s),!0,q,!0,s)}}
+return new A.wx(this.d,this.e,new A.tQ(A.wE(B.a5,A.b([new A.u8(A.atI(s,s,new A.ru("assets/header-bg.png",s,s)),s),new A.j5(new A.br(0,q*0.4,0,0),A.rX(A.b([A.aeI("assets/subtitle.svg",600),A.aeI("assets/title.svg",1200)],r),B.aE),s)],r),B.eO),B.z7,s),!0,q,!0,s)}}
 A.EZ.prototype={
 O(a){var s,r=J.VO(20,t.l7)
 for(s=0;s<20;++s)r[s]=B.Qd
