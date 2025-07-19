@@ -31,8 +31,8 @@ jobs:
           cache: true
       - run: flutter --version
       - run: flutter pub get
-      - run: flutter build web --wasm --no-source-maps --base-href /
-      # - run: flutter build web --wasm --no-source-maps --base-href /${{ steps.version.outputs.repository }}/
+      - run: flutter build web --wasm --base-href /
+      # - run: flutter build web --wasm --base-href /${{ steps.version.outputs.repository }}/
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
