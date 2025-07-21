@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+/// A class that provides localized strings for the application.
 class L10n {
   L10n();
 

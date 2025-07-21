@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/shared/themes/app_theme_extensions.dart';
 
+/// A class that holds the theme data for the application.
 final class AppThemeData {
+  /// The theme data for the application.
   static ThemeData themeData = ThemeData(
+    /// Sets the AppBarTheme.
     appBarTheme: AppBarTheme(
       toolbarHeight: 80.0,
       elevation: 0.0,

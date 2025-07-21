@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:my_portfolio/res/interfaces/image_interface.dart';
 import 'package:my_portfolio/res/interfaces/image_type.dart';
 
+/// An asset representing the navbar logo.
 final class AssetNavbarLogo extends ImageInterface {
   @override
   String get path => makePath('navbar-logo.svg');

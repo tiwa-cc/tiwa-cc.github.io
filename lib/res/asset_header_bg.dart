@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio/res/interfaces/image_interface.dart';
 import 'package:my_portfolio/res/interfaces/image_type.dart';
 
+/// An asset representing the header background image.
 final class AssetHeaderBg extends ImageInterface {
   @override
   String get path => makePath('header-bg.png');
