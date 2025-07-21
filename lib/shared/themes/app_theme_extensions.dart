@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 
+/// A class that holds the theme data for the application.
 final class AppThemeExtensions {
-  static List<ThemeExtension<dynamic>> extensions = [AppBarTitleStyle()];
+  /// The list of theme extensions for the application.
+  static List<ThemeExtension<dynamic>> extensions = [
+    /// AppBarTitleStyle
+    AppBarTitleStyle(),
+  ];
 }
 
 final class AppBarTitleStyle extends ThemeExtension<AppBarTitleStyle> {

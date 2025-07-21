@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:my_portfolio/res/interfaces/image_interface.dart';
 import 'package:my_portfolio/res/interfaces/image_type.dart';
 
+/// An asset representing the subtitle image.
 final class AssetSubtitle extends ImageInterface {
   @override
   String get path => makePath('subtitle.svg');
