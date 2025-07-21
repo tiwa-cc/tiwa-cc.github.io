@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/l10n/l10n.dart';
 
 class AboutPanel extends StatelessWidget {
   final VoidCallback onHeader;
@@ -7,7 +8,12 @@ class AboutPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = L10n.of(context)!;
+    final title = l10n.aboutTitle;
     return Column(
+      mainAxisSize: MainAxisSize.max,
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Container(
           width: double.infinity,
@@ -15,10 +21,10 @@ class AboutPanel extends StatelessWidget {
           child: ElevatedButton(onPressed: onHeader, child: Text('▲')),
         ),
         RichText(
-          text: const TextSpan(text: 'ABOUT'),
+          text: TextSpan(text: title),
           textScaler: TextScaler.linear(4.0),
         ),
-        ...List.generate(20, (index) => const Text('AboutPanel')),
+        ...List.generate(20, (index) => Text("${title}Panel")),
       ],
     );
   }
