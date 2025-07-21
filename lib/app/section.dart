@@ -1,1 +1,1 @@
-enum Section { header, about, contact, portfolio }
+enum Section { profile, skill, about, contact, portfolio }
