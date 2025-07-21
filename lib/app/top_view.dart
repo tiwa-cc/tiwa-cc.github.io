@@ -12,6 +12,7 @@ import 'package:my_portfolio/l10n/l10n.dart';
 import 'package:my_portfolio/res/asset_header_bg.dart';
 import 'package:my_portfolio/res/asset_subtitle.dart';
 import 'package:my_portfolio/res/asset_title.dart';
+import 'package:my_portfolio/shared/parts/scroll_jumper.dart';
 import 'package:my_portfolio/shared/themes/app_theme_data.dart';
 
 class TopView extends StatefulWidget {
@@ -21,32 +22,34 @@ class TopView extends StatefulWidget {
   State<TopView> createState() => _TopViewState();
 }
 
-class _TopViewState extends State<TopView> {
-  final _scrollController = ScrollController();
-  final _sectionKeys = <Section, GlobalKey>{};
-
+class _TopViewState extends State<TopView> with ScrollJumper<Section> {
   @override
   void initState() {
     super.initState();
-
-    _scrollController.addListener(_handleScroll);
-
-    for (final section in Section.values) {
-      _sectionKeys[section] = GlobalKey();
+initScrollJumper(Section.values, (section) {
+      // /*
+      Section.values.where((s) => s != Section.header).forEach((s) {
+        final state = globalKeyWithSection(s)?.currentState;
+        if (s == section) {
+          state?.activate();
+        } else {
+          state?.deactivate();
     }
+});
+      // */
+    });
   }
 
   @override
   void dispose() {
-    _scrollController.dispose();
+    disposeScrollJumper();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     final l10n = L10n.of(context)!;
-    final mediaQuery = MediaQuery.of(context);
-
+    
     return MaterialApp(
       title: l10n.title,
       debugShowCheckedModeBanner: false,
@@ -55,11 +58,10 @@ class _TopViewState extends State<TopView> {
       theme: AppThemeData.themeData,
       home: Scaffold(
         body: CustomScrollView(
-          controller: _scrollController,
+              controller: scrollController,
           slivers: [
             HeaderView(
-              key: _sectionKeys[Section.header],
-              background: AssetHeaderBg(),
+                            background: AssetHeaderBg(),
               navLogo: AppBarLogo(),
               title: AssetTitle(),
               subtitle: AssetSubtitle(),
@@ -92,45 +94,19 @@ class _TopViewState extends State<TopView> {
     );
   }
 
-  void _handleScroll() {
-    for (final entry in _sectionKeys.entries) {
-      final ctx = entry.value.currentContext;
-      if (ctx != null) {
-        final box = ctx.findRenderObject() as RenderBox;
-        final pos = box.localToGlobal(Offset.zero).dy;
-        if (pos < 200 && pos > -200) {
-          // widget.onSectionChanged(entry.key);
-          break;
-        }
-      }
-    }
-  }
-
-  void scrollTo(Section section) {
-    final key = _sectionKeys[section];
-    final ctx = key?.currentContext;
-    if (ctx != null) {
-      Scrollable.ensureVisible(
-        ctx,
-        duration: Duration(milliseconds: 500),
-        curve: Curves.easeInOut,
-      );
-    }
-  }
-
   void _scrollViewHeader() {
-    scrollTo(Section.header);
+    scrollToTop();
   }
 
   void _scrollViewAbout() {
-    scrollTo(Section.about);
+    scrollToSection(Section.about);
   }
 
   void _scrollViewPortfolio() {
-    scrollTo(Section.portfolio);
+    scrollToSection(Section.portfolio);
   }
 
   void _scrollViewContact() {
-    scrollTo(Section.contact);
+    scrollToSection(Section.contact);
   }
 }
