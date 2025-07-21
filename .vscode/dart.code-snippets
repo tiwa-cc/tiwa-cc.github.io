@@ -1,0 +1,11 @@
+{
+  "delay_widget": {
+    "prefix": "delay_widget",
+    "body": [
+      "WidgetsBinding.instance.addPostFrameCallback((_) {",
+      "\t$0\n",
+      "});"
+    ],
+    "description": ""
+  }
+}
