@@ -18,4 +18,6 @@ class L10n {
   String get portfolioTitle => Intl.message('PORTFOLIO');
   String get profileTitle => Intl.message('PROFILE');
   String get skillTitle => Intl.message('SKILL');
+  String get copyrightPrefix => Intl.message('Copyright © ');
+  String get copyrightYear => Intl.message(' 2025');
 }
