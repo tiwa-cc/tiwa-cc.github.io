@@ -1,0 +1,12 @@
+targets:
+  $default:
+    builders:
+      theme_extensions_gen:
+        options:
+          input: lib/shared/themes/*.dart
+          output: lib/shared/themes/*.g.dart
+          output_path: lib/shared/themes
+        enabled: true
+
+      theme_extensions_gen:contextExtensionsGenerator:
+        enabled: false

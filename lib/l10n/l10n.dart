@@ -12,7 +12,7 @@ class L10n {
     Locale('en', 'US'),
   ];
 
-  String get title => Intl.message('Create&Creative');
+  String get brandName => Intl.message('Create&Creative');
   String get aboutTitle => Intl.message('ABOUT');
   String get contactTitle => Intl.message('CONTACT');
   String get portfolioTitle => Intl.message('PORTFOLIO');

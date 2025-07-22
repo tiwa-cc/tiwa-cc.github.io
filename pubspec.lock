@@ -58,7 +58,7 @@ packages:
     source: hosted
     version: "2.5.4"
   build_config:
-    dependency: transitive
+    dependency: "direct dev"
     description:
       name: build_config
       sha256: "4ae2de3e1e67ea270081eaee972e1bd8f027d459f249e0f1186730784c2e7e33"
@@ -568,6 +568,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  source_gen:
+    dependency: transitive
+    description:
+      name: source_gen
+      sha256: "35c8150ece9e8c8d263337a265153c3329667640850b9304861faea59fc98f6b"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.0"
   source_span:
     dependency: transitive
     description:
@@ -640,6 +648,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.7.4"
+  theme_extensions_gen:
+    dependency: "direct main"
+    description:
+      name: theme_extensions_gen
+      sha256: "4885aae205c39cd282e0130bf69dfa217e07b7c9c953bd5443f1365583c2a9a6"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.2.1"
+  theme_extensions_gen_annotations:
+    dependency: "direct main"
+    description:
+      name: theme_extensions_gen_annotations
+      sha256: "26c4b84c0147f43cda0ef2640c80a5c251a047d4ebcbc728a3762b24f410bc72"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.2.0"
   timing:
     dependency: transitive
     description:
@@ -696,6 +720,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.4"
+  very_good_analysis:
+    dependency: transitive
+    description:
+      name: very_good_analysis
+      sha256: "62d2b86d183fb81b2edc22913d9f155d26eb5cf3855173adb1f59fac85035c63"
+      url: "https://pub.dev"
+    source: hosted
+    version: "7.0.0"
   vm_service:
     dependency: transitive
     description:

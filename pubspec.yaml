@@ -38,6 +38,8 @@ dependencies:
   flutter_svg: ^2.2.0
   intl: ^0.20.2
   flutter_riverpod: ^2.6.1
+  theme_extensions_gen: ^0.2.1
+  theme_extensions_gen_annotations: ^0.2.0
 
 dev_dependencies:
   flutter_test:
@@ -53,6 +55,7 @@ dev_dependencies:
   riverpod_lint: ^2.6.5
 
   build_runner:
+  build_config:
   custom_lint:
 
 # For information on the generic Dart part of this file, see the

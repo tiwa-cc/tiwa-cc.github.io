@@ -51,7 +51,7 @@ class _TopViewState extends State<TopView> with ScrollJumper<Section> {
     final l10n = L10n.of(context)!;
 
     return MaterialApp(
-      title: l10n.title,
+      title: l10n.brandName,
       debugShowCheckedModeBanner: false,
       localizationsDelegates: L10n.localizationsDelegates,
       supportedLocales: L10n.supportedLocales,
