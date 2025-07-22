@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:my_portfolio/l10n/l10n.dart';
 
 class ContactPanel extends StatelessWidget {
@@ -24,7 +25,13 @@ class ContactPanel extends StatelessWidget {
           text: TextSpan(text: title),
           textScaler: TextScaler.linear(4.0),
         ),
-        ...List.generate(20, (index) => Text("${title}Panel")),
+        Row(
+          children: [
+            IconButton(onPressed: null, icon: Icon(FontAwesomeIcons.xTwitter)),
+            IconButton(onPressed: null, icon: Icon(FontAwesomeIcons.facebook)),
+            IconButton(onPressed: null, icon: Icon(FontAwesomeIcons.linkedin)),
+          ],
+        ),
       ],
     );
   }
