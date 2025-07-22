@@ -7,5 +7,22 @@
       "});"
     ],
     "description": ""
+  },
+  "theme_extension": {
+    "prefix": "theme_extension",
+    "body": [
+      "import 'package:flutter/foundation.dart';",
+      "import 'package:flutter/material.dart';",
+      "import 'package:theme_extensions_gen_annotations/theme_extensions_gen_annotations.dart';",
+      "",
+      "part '${1:theme_name}.g.dart';",
+      "",
+      "@ThemeExtensionTemplate()",
+      "abstract interface class ${1:ThemeName} extends ThemeExtension<${1:ThemeName}> with _$${1:ThemeName}Mixin, Diagnosticable {",
+      "\tconst factory ${1:ThemeName}({required TextStyle style}) = _$${1:ThemeName};",
+      "\t$0",
+      "}"
+    ],
+    "description": ""
   }
 }
