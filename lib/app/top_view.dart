@@ -5,6 +5,7 @@ import 'package:my_portfolio/app/responsive/top_view_responsive.dart';
 import 'package:my_portfolio/app/section.dart';
 import 'package:my_portfolio/features/about/about_view_button.dart';
 import 'package:my_portfolio/features/contact/contact_view_button.dart';
+import 'package:my_portfolio/features/footer/footer_view.dart';
 import 'package:my_portfolio/features/header/header_view.dart';
 import 'package:my_portfolio/features/portfolio/portfolio_view_button.dart';
 import 'package:my_portfolio/l10n/l10n.dart';
@@ -88,6 +89,7 @@ class _TopViewState extends State<TopView> with ScrollJumper<Section> {
                     ),
                   ),
                 ),
+                SliverToBoxAdapter(child: FooterView()),
               ],
             ),
           ],
