@@ -6,9 +6,9 @@ import 'package:my_portfolio/features/portfolio/portfolio_panel.dart';
 import 'package:my_portfolio/features/profile/profile_panel.dart';
 import 'package:my_portfolio/features/skill/core_skill_panel.dart';
 
-class TopViewSm extends StatelessWidget {
+class TopViewMd extends StatelessWidget {
   final TopViewHolder holder;
-  const TopViewSm({super.key, required this.holder});
+  const TopViewMd({super.key, required this.holder});
 
   @override
   Widget build(BuildContext context) {
