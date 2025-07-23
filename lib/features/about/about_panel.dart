@@ -15,16 +15,25 @@ class AboutPanel extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Container(
-          width: double.infinity,
-          alignment: Alignment.topRight,
-          child: ElevatedButton(onPressed: onHeader, child: Text('▲')),
-        ),
+        // ScrollToHeadButton(onHeader: onHeader),
+        // CardTitle(title: title),
         RichText(
-          text: TextSpan(text: title),
-          textScaler: TextScaler.linear(4.0),
+          text: TextSpan(
+            children: [
+              TextSpan(text: 'ITフリーランスエンジニアの'),
+              TextSpan(
+                text: 'tiwa-cc',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              TextSpan(text: 'です。\n'),
+              TextSpan(text: '携帯電話のアプリ開発や、Webサイトの制作を行っています。\n'),
+              TextSpan(text: 'なんたらかんたら。うんたらかんたら。\n'),
+              TextSpan(text: 'なんたらかんたら。うんたらかんたら。\n'),
+              TextSpan(text: 'なんたらかんたら。うんたらかんたら。\n'),
+            ],
+          ),
+          textScaler: TextScaler.linear(1.0),
         ),
-        ...List.generate(20, (index) => Text("${title}Panel")),
       ],
     );
   }
