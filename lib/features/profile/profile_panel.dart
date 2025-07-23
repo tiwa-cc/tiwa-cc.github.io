@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/l10n/l10n.dart';
+import 'package:my_portfolio/res/asset_profile.dart';
+import 'package:my_portfolio/shared/widgets/card_title.dart';
 
 class ProfilePanel extends StatelessWidget {
   final VoidCallback onHeader;
@@ -15,16 +17,9 @@ class ProfilePanel extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Container(
-          width: double.infinity,
-          alignment: Alignment.topRight,
-          child: ElevatedButton(onPressed: onHeader, child: Text('▲')),
-        ),
-        RichText(
-          text: TextSpan(text: title),
-          textScaler: TextScaler.linear(4.0),
-        ),
-        ...List.generate(20, (index) => Text("${title}Panel")),
+        // ScrollToHeadButton(onHeader: onHeader),
+        CardTitle(title: title),
+        AssetProfile().image,
       ],
     );
   }
