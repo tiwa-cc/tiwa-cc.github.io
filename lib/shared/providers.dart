@@ -5,3 +5,8 @@ import 'package:my_portfolio/shared/parts/breakpoint.dart';
 final breakpointSizeProvider = StateNotifierProvider(
   (ref) => BreakpointSizeNotifier(),
 );
+
+/// A notifier that manages the current breakpoint size.
+final topViewScrollPositionProvider = StateProvider<double>((ref) {
+  return 0.0; // Default scroll position
+});

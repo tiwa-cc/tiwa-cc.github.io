@@ -10,7 +10,7 @@ final class AssetHeaderBg extends ImageInterface {
   ImageType get type => ImageType.imageAsset;
 
   @override
-  Widget get image => Image.asset(path);
+  Widget get image => Image.asset(path, fit: BoxFit.cover);
   @override
   double get height => 640.0;
   @override

@@ -9,7 +9,6 @@ class AboutPanel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = L10n.of(context)!;
-    final title = l10n.aboutTitle;
     return Column(
       mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.center,
@@ -22,7 +21,7 @@ class AboutPanel extends StatelessWidget {
             children: [
               TextSpan(text: 'ITフリーランスエンジニアの'),
               TextSpan(
-                text: 'tiwa-cc',
+                text: l10n.author,
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
               TextSpan(text: 'です。\n'),

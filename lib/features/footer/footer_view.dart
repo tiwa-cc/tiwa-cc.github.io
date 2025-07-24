@@ -20,8 +20,8 @@ class FooterView extends StatelessWidget {
         text: TextSpan(
           children: [
             TextSpan(text: l10n.copyrightPrefix, style: copyrightTheme.style),
+            const TextSpan(text: ' '),
             TextSpan(text: l10n.brandName, style: brandNameTheme.style),
-            TextSpan(text: l10n.copyrightYear, style: copyrightTheme.style),
           ],
         ),
       ),

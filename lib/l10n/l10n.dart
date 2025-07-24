@@ -21,6 +21,11 @@ class L10n {
   String get experienceTitle => Intl.message('Experience');
   String get coreSkillTitle => Intl.message('Core Skills');
   String get softwareSkillTitle => Intl.message('Software Skills');
-  String get copyrightPrefix => Intl.message('Copyright © ');
-  String get copyrightYear => Intl.message(' 2025');
+  String get copyrightPrefix => Intl.message('Copyright © 2025');
+
+  String get author => Intl.message('tiwa-cc');
+  String get location => Intl.message('Japan');
+  String get emailAccount => Intl.message('');
+  String get xAccount => Intl.message('@tiwa-cc');
+  String get linkedInAccount => Intl.message('');
 }
