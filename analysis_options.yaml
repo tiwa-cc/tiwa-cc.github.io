@@ -27,5 +27,9 @@ linter:
 analyzer:
   plugins:
     - custom_lint
+  exclude:
+    - "**/*.g.dart" # Exclude generated files from analysis
+    - "**/*.freezed.dart" # Exclude Freezed generated files from analysis
+    - "**/*.gr.dart" # Exclude generated route files from analysis
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options
