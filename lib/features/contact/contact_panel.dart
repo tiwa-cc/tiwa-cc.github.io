@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:my_portfolio/l10n/l10n.dart';
-import 'package:my_portfolio/shared/widgets/card_title.dart';
 
 class ContactPanel extends StatelessWidget {
   final VoidCallback onHeader;
@@ -11,21 +10,24 @@ class ContactPanel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = L10n.of(context)!;
-    final title = l10n.contactTitle;
 
     final contactList = [
       ContactListData(
         icon: Icons.location_on,
-        title: 'Fukuoka, Japan',
+        title: l10n.location,
         onTap: null,
       ),
-      ContactListData(icon: Icons.email, title: '', onTap: null),
+      ContactListData(icon: Icons.email, title: l10n.emailAccount, onTap: null),
       ContactListData(
         icon: FontAwesomeIcons.xTwitter,
-        title: '@tiwa_cc',
+        title: l10n.xAccount,
         onTap: null,
       ),
-      ContactListData(icon: FontAwesomeIcons.linkedin, title: '', onTap: null),
+      ContactListData(
+        icon: FontAwesomeIcons.linkedin,
+        title: l10n.linkedInAccount,
+        onTap: null,
+      ),
     ];
 
     return Column(
@@ -34,7 +36,7 @@ class ContactPanel extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         // ScrollToHeadButton(onHeader: onHeader),
-        CardTitle(title: title),
+        // CardTitle(title: l10n.contactTitle),
         ...contactList.map(
           (contact) => ListTile(
             leading: FaIcon(contact.icon),

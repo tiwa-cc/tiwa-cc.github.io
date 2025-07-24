@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:my_portfolio/app/app_bar_logo.dart';
 import 'package:my_portfolio/app/responsive/top_view_holder.dart';
 import 'package:my_portfolio/app/responsive/top_view_responsive.dart';
@@ -13,17 +14,18 @@ import 'package:my_portfolio/res/asset_header_bg.dart';
 import 'package:my_portfolio/res/asset_subtitle.dart';
 import 'package:my_portfolio/res/asset_title.dart';
 import 'package:my_portfolio/shared/parts/scroll_jumper.dart';
+import 'package:my_portfolio/shared/providers.dart';
 import 'package:my_portfolio/shared/themes/app_theme_data.dart';
 import 'package:my_portfolio/shared/widgets/breakpoint_observer.dart';
 
-class TopView extends StatefulWidget {
+class TopView extends ConsumerStatefulWidget {
   const TopView({super.key});
 
   @override
-  State<TopView> createState() => _TopViewState();
+  ConsumerState<TopView> createState() => _TopViewState();
 }
 
-class _TopViewState extends State<TopView> with ScrollJumper<Section> {
+class _TopViewState extends ConsumerState<TopView> with ScrollJumper<Section> {
   @override
   void initState() {
     super.initState();
@@ -50,6 +52,10 @@ class _TopViewState extends State<TopView> with ScrollJumper<Section> {
   @override
   Widget build(BuildContext context) {
     final l10n = L10n.of(context)!;
+
+    ref.listen(breakpointSizeProvider.select((p) => p.size.height), (_, _) {
+      cacheSectionOffsets();
+    });
 
     return MaterialApp(
       title: l10n.brandName,

@@ -17,12 +17,15 @@ class TopViewResponsive extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final responsive = ref.watch(breakpointSizeProvider);
-    return switch (responsive.breakpoint) {
-      Breakpoint.xl => TopViewXl(holder: holder),
-      Breakpoint.lg => TopViewLg(holder: holder),
-      Breakpoint.md => TopViewMd(holder: holder),
-      Breakpoint.sm => TopViewSm(holder: holder),
-      Breakpoint.xs => TopViewXs(holder: holder),
-    };
+    return Padding(
+      padding: const EdgeInsets.all(48.0),
+      child: switch (responsive.breakpoint) {
+        Breakpoint.xl => TopViewXl(holder: holder),
+        Breakpoint.lg => TopViewLg(holder: holder),
+        Breakpoint.md => TopViewMd(holder: holder),
+        Breakpoint.sm => TopViewSm(holder: holder),
+        Breakpoint.xs => TopViewXs(holder: holder),
+      },
+    );
   }
 }
