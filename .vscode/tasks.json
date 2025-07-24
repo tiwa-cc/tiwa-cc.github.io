@@ -18,6 +18,13 @@
 			"problemMatcher": [],
 			"label": "flutter: flutter build web",
 			"detail": "my_portfolio"
-		}
+		},
+		{
+			"label": "build_runner watch",
+			"type": "shell",
+			"command": "flutter pub run build_runner watch --delete-conflicting-outputs",
+			"problemMatcher": [],
+			"isBackground": true
+		},
 	]
 }
