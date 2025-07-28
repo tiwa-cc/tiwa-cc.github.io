@@ -27,5 +27,6 @@ class L10n {
   String get location => Intl.message('Japan');
   String get emailAccount => Intl.message('');
   String get xAccount => Intl.message('@tiwa-cc');
+  String get xUri => Intl.message('https://x.com/tiwa_cc');
   String get linkedInAccount => Intl.message('');
 }

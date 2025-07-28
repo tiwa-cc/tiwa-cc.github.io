@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:my_portfolio/l10n/l10n.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ContactPanel extends StatelessWidget {
   final VoidCallback onHeader;
-final bool isListTile;
+  final bool isListTile;
 
   const ContactPanel({
-super.key,
-required this.onHeader,
+    super.key,
+    required this.onHeader,
     this.isListTile = true,
-});
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -23,14 +24,15 @@ required this.onHeader,
         onTap: () => {},
       ),
       _ContactHolder(
-icon: Icons.email,
-title: l10n.emailAccount,
-onTap: () => {},
-),
+        icon: Icons.email,
+        title: l10n.emailAccount,
+        onTap: () => {},
+      ),
       _ContactHolder(
         icon: FontAwesomeIcons.xTwitter,
         title: l10n.xAccount,
-        onTap: () => {},
+        onTap: () =>
+            launchUrl(Uri.parse(l10n.xUri), webOnlyWindowName: '_self'),
       ),
       _ContactHolder(
         icon: FontAwesomeIcons.linkedin,
@@ -39,7 +41,7 @@ onTap: () => {},
       ),
     ];
 
-return isListTile
+    return isListTile
         ? _layoutListTile(contactList)
         : _layoutIconButton(contactList);
   }
@@ -52,7 +54,7 @@ return isListTile
       children: [
         // ScrollToHeadButton(onHeader: onHeader),
         // CardTitle(title: l10n.contactTitle),
-        ...contacts.map(          (contact) => contact.getListTile()        ),
+        ...contacts.map((contact) => contact.getListTile()),
       ],
     );
   }
