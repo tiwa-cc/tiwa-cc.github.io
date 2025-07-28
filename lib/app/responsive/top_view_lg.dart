@@ -15,54 +15,49 @@ class TopViewLg extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // +---------+-----------------------------------------------------------+
-    // | profile | about                                                     |
-    // |         |                                                           |
-    // |         +------------------+-------------------+--------------------+
-    // |         | Education        | Experience        | Core Skills        |
-    // |         |                  |                   |                    |
-    // |         |                  |                   |                    |
-    // +---------+                  |                   +--------------------+
-    // | Contact |                  |                   | Software Skills    |
-    // |         |                  |                   |                    |
-    // |         |                  |                   |                    |
-    // +---------+------------------+-------------------+--------------------+
+    // +---------+-------------------------------------+
+    // | profile | about                               |
+    // |         |                                     |
+    // | Contact +------------------+------------------+
+    // |         | Education        | Core Skills      |
+    // |         |                  |                  |
+    // |         | Experience       | Software Skills  |
+    // |         |                  |                  |
+    // +---------+------------------+------------------+
     return LayoutGrid(
       areas: [
-        ['profile', 'about', 'about', 'about'],
-        ['profile', 'education', 'experience', 'coreSkill'],
-        ['contact', 'education', 'experience', 'softwareSkill'],
+        ['left', 'center_above', 'center_above'],
+        ['left', 'center_left', 'center_right'],
       ].map((row) => row.join(' ')).join('\n'),
-      columnSizes: [1.fr, 1.fr, 1.fr, 1.fr],
-      rowSizes: [
-        120.0.px, // Row 0: profile + about
-        auto, // Row 1: Education, Experience, Core Skills
-        auto, // Row 2: Contact + Software Skills
-      ],
+      columnSizes: [1.fr, 2.fr, 2.fr],
+      rowSizes: [120.0.px, auto],
       columnGap: 12,
       rowGap: 12,
       children: [
+        Column(
+          children: [
+            SizedBox(height: 32.0),
+            profileCard(),
+            SizedBox(height: 32.0),
+            contactCard(),
+          ],
+        ).inGridArea('left'),
         ...[
+          aboutCard().inGridArea('center_above'),
           Column(
             children: [
+              educationCard(),
               SizedBox(height: 32.0),
-              profileCard(),
+              experienceCard(),
+            ],
+          ).inGridArea('center_left'),
+          Column(
+            children: [
+              coreSkillsCard(),
               SizedBox(height: 32.0),
-              contactCard(),
+              softwareSkillsCard(),
             ],
-          ).inGridArea('profile'),
-        ],
-        ...[
-          aboutCard().inGridArea('about'),
-          ...[
-            educationCard().inGridArea('education'),
-            experienceCard().inGridArea('experience'),
-            ...[
-              Column(
-                children: [coreSkillsCard(), softwareSkillsCard()],
-              ).inGridArea('coreSkill'),
-            ],
-          ],
+          ).inGridArea('center_right'),
         ],
       ],
     );
