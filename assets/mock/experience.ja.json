@@ -1,0 +1,53 @@
+{
+  "experienceAreas": [
+    {
+      "title": "Web / Product Delivery",
+      "summary": "要件整理から運用改善までをつなぐ開発",
+      "startedAt": "2020年代",
+      "endedAt": "現在",
+      "highlights": [
+        "管理画面、API、運用をまたぐ前提整理から改善まで担当。",
+        "外部連携を含む案件で、データの流れと現場運用の接続を意識して設計。",
+        "少人数体制で技術選定、レビュー、進行管理も兼務。"
+      ],
+      "technologies": [
+        "Web Frontend",
+        "Backend / API",
+        "Cloud / Infrastructure",
+        "Data / Storage"
+      ]
+    },
+    {
+      "title": "Platform / System Delivery",
+      "summary": "制約の強い環境で品質と検証を前に進める役割",
+      "startedAt": "2010年代",
+      "endedAt": "2020年代初頭",
+      "highlights": [
+        "制約の多い環境で、実装だけでなく検証効率や評価の改善にも継続して関与。",
+        "低レイヤー寄りの課題でも、レビューや進行面の整理まで担当。",
+        "前提の異なるメンバー間で論点整理を担った経験。"
+      ],
+      "technologies": [
+        "System Integration",
+        "Testing / Quality",
+        "Platform Development"
+      ]
+    },
+    {
+      "title": "Mobile / Client Experience",
+      "summary": "利用体験に近い層の実装と検証",
+      "startedAt": "2000年代後半",
+      "endedAt": "2020年代前半",
+      "highlights": [
+        "UI 実装、表示制御、端末連携など利用体験に近い層を担当。",
+        "再現しにくい不具合の切り分けと検証フロー整備を継続して実施。",
+        "現在のクロスプラットフォーム実装にもつながる土台。"
+      ],
+      "technologies": [
+        "Mobile Apps",
+        "UI Implementation",
+        "Native Integration"
+      ]
+    }
+  ]
+}

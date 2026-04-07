@@ -13,11 +13,7 @@ final class AssetTitle extends ImageInterface {
   @override
   Widget get image => SvgPicture.asset(path, width: 1200);
   @override
-  double get height => 113.0;
+  double get height => 30.107298;
   @override
-  double get width => 1134.0;
-  @override
-  double screenHeight(double screenWidth) => screenWidth * height / width;
-  @override
-  double screenWidth(double screenHeight) => 1200;
+  double get width => 395.78241;
 }

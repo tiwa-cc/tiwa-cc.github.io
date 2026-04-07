@@ -1,15 +1,16 @@
 {
   "delay_widget": {
     "prefix": "delay_widget",
+    "description": "",
     "body": [
       "WidgetsBinding.instance.addPostFrameCallback((_) {",
       "\t$0\n",
       "});"
     ],
-    "description": ""
   },
   "theme_extension": {
     "prefix": "theme_extension",
+    "description": "",
     "body": [
       "import 'package:flutter/foundation.dart';",
       "import 'package:flutter/material.dart';",
@@ -23,6 +24,31 @@
       "\t$0",
       "}"
     ],
-    "description": ""
-  }
+  },
+  "class_freezed": {
+    "prefix": "class_freezed",
+    "description": "Generate a Freezed class",
+    "body": [
+      "import 'package:freezed_annotation/freezed_annotation.dart';",
+      "",
+      "part '$TM_FILENAME_BASE.freezed.dart';",
+      "// part '$TM_FILENAME_BASE.g.dart';",
+      "",
+      "@freezed",
+      "// @JsonSerializable()",
+      "abstract class ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g} with _\\$${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g} {",
+      "  const factory ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}({",
+      "    required $0,",
+      "  }) = _${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g};",
+      "",
+      "  // factory ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}.fromJson(Map<String, Object?> json) =>",
+      "  //     _\\$${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}FromJson(json);",
+      "}",
+    ],
+  },
+  "part_g_file": {
+    "prefix": "part_g_file",
+    "description": "Insert current file part.",
+    "body": "part '$TM_FILENAME_BASE.g.dart';",
+  },
 }

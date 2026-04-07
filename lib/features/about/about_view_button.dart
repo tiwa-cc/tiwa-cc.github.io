@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/features/about/themes/about_view_button_theme.dart';
 import 'package:my_portfolio/l10n/l10n.dart';
+import 'package:my_portfolio/shared/themes/header_view_button_theme.dart';
 
 final class AboutViewButton extends StatefulWidget {
   const AboutViewButton({super.key, required this.onPressed});
@@ -15,11 +15,11 @@ class _AboutViewButtonState extends State<AboutViewButton> {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = L10n.of(context)!;
+    final l10n = L10n.of(context);
     final title = l10n.aboutTitle;
-    final theme = AboutViewButtonTheme.theme(context);
+    final theme = HeaderViewButtonTheme.theme(context);
     return TextButton(
-      style: theme?.style,
+      style: theme.style,
       statesController: _statesController,
       onPressed: _onPressed,
       child: Stack(alignment: Alignment.center, children: [Text(title)]),

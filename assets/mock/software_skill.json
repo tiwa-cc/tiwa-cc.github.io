@@ -1,0 +1,16 @@
+{
+  "softwareSkills": [
+    { "id": "web_frontend", "label": "Web Frontend" },
+    { "id": "backend_api", "label": "Backend / API" },
+    { "id": "mobile_apps", "label": "Mobile Apps" },
+    { "id": "cloud_infrastructure", "label": "Cloud / Infrastructure" },
+    { "id": "data_storage", "label": "Data / Storage" },
+    { "id": "development_tooling", "label": "Development Tooling" },
+    { "id": "testing_quality", "label": "Testing / Quality" },
+    {
+      "id": "documentation_workflow",
+      "label": "Documentation / Workflow"
+    },
+    { "id": "system_integration", "label": "System Integration" }
+  ]
+}

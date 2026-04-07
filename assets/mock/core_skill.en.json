@@ -1,0 +1,20 @@
+{
+  "coreSkills": [
+    {
+      "title": "Turn ambiguity into buildable specifications",
+      "description": "I organize assumptions with stakeholders and translate them into screens, APIs, and operational behavior that teams can implement."
+    },
+    {
+      "title": "Connect design, implementation, and release support",
+      "description": "I keep delivery moving across design, coding, verification, and production support instead of treating handoffs as finish lines."
+    },
+    {
+      "title": "Make quality improvement operational",
+      "description": "I build test setups, verification steps, and helper tooling that raise reproducibility and make iteration easier."
+    },
+    {
+      "title": "Move cross-domain conversations forward",
+      "description": "I align stakeholders across web, mobile, and embedded contexts so technical tradeoffs lead to concrete decisions."
+    }
+  ]
+}

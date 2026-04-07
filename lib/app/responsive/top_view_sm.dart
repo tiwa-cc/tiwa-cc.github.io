@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_layout_grid/flutter_layout_grid.dart';
 import 'package:my_portfolio/app/responsive/top_view_holder.dart';
-import 'package:my_portfolio/features/about/about_panel.dart';
-import 'package:my_portfolio/features/contact/contact_panel.dart';
-import 'package:my_portfolio/features/education/education_panel.dart';
-import 'package:my_portfolio/features/experience/experience_panel.dart';
-import 'package:my_portfolio/features/profile/profile_panel.dart';
-import 'package:my_portfolio/features/skill/core_skill_panel.dart';
-import 'package:my_portfolio/features/skill/software_skills_panel.dart';
+import 'package:my_portfolio/app/responsive/top_view_xs.dart';
+import 'package:my_portfolio/app/section.dart';
+import 'package:my_portfolio/shared/widgets/scroll_to_head_button.dart';
 
 class TopViewSm extends StatelessWidget {
   final TopViewHolder holder;
@@ -15,90 +10,18 @@ class TopViewSm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // +------------+------------+
-    // | profile    | about      |
-    // |            +------------+
-    // |            | Contact    |
-    // +------------+------------+
-    // | Education  | Experience |
-    // +------------+------------+
-    // | Core Skill | SW Skills  |
-    // +------------+------------+
-    const double gap = 12.0;
-    return LayoutGrid(
-      areas: [
-        ['left_above', 'top_above'],
-        ['left_above', 'top'],
-        ['left', 'center'],
-        ['left_below', 'center_below'],
-      ].map((row) => row.join(' ')).join('\n'),
-      columnSizes: [1.fr, 1.fr],
-      rowSizes: [auto, auto, auto, auto],
-      columnGap: gap,
-      rowGap: gap,
+    final sections = visibleNavigationSections();
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      spacing: 16.0,
       children: [
-        ...[
-          profileCard().inGridArea('left_above'),
-          educationCard().inGridArea('left'),
-          coreSkillsCard().inGridArea('left_below'),
-        ],
-        ...[
-          aboutCard().inGridArea('top_above'),
-          contactCard().inGridArea('top'),
-          experienceCard().inGridArea('center'),
-          softwareSkillsCard().inGridArea('center_below'),
+        for (final section in sections) ...[
+          holder.getCard(section),
+          if (TopViewXs.showsScrollJumperAfter(section))
+            ScrollToHeadButton(onHeader: holder.scrollViewHeader),
         ],
       ],
-    );
-  }
-
-  Widget aboutCard() {
-    return AboutPanel(
-      key: holder.aboutGlobalKey,
-      onHeader: holder.scrollViewHeader,
-    );
-  }
-
-  Widget profileCard() {
-    return ProfilePanel(
-      key: holder.profileGlobalKey,
-      onHeader: holder.scrollViewHeader,
-    );
-  }
-
-  Widget contactCard() {
-    return ContactPanel(
-      key: holder.contactGlobalKey,
-      onHeader: holder.scrollViewHeader,
-      isListTile: false,
-    );
-  }
-
-  Widget educationCard() {
-    return EducationPanel(
-      // key: holder.skillGlobalKey,
-      onHeader: holder.scrollViewHeader,
-    );
-  }
-
-  Widget experienceCard() {
-    return ExperiencePanel(
-      // key: holder.aboutGlobalKey,
-      onHeader: holder.scrollViewHeader,
-    );
-  }
-
-  Widget coreSkillsCard() {
-    return CoreSkillPanel(
-      // key: holder.aboutGlobalKey,
-      onHeader: holder.scrollViewHeader,
-    );
-  }
-
-  Widget softwareSkillsCard() {
-    return SoftwareSkillsPanel(
-      // key: holder.aboutGlobalKey,
-      onHeader: holder.scrollViewHeader,
     );
   }
 }

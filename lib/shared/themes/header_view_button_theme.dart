@@ -1,19 +1,41 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:theme_extensions_gen_annotations/theme_extensions_gen_annotations.dart';
 
-part 'header_view_button_theme.g.dart';
+final class HeaderViewButtonTheme
+    extends ThemeExtension<HeaderViewButtonTheme> {
+  const HeaderViewButtonTheme({required this.style});
 
-@ThemeExtensionTemplate()
-abstract interface class HeaderViewButtonTheme
-    extends ThemeExtension<HeaderViewButtonTheme>
-    with _$HeaderViewButtonThemeMixin, Diagnosticable {
-  const factory HeaderViewButtonTheme({required ButtonStyle style}) =
-      _$HeaderViewButtonTheme;
-}
+  final ButtonStyle style;
 
-extension HeaderViewButtonThemeExt on HeaderViewButtonTheme {
-  static HeaderViewButtonTheme? theme(BuildContext context) {
-    return Theme.of(context).extension<HeaderViewButtonTheme>();
+  static const ButtonStyle fallbackStyle = ButtonStyle(
+    foregroundColor: WidgetStatePropertyAll<Color>(Colors.yellow),
+    shadowColor: WidgetStatePropertyAll<Color>(Colors.blueGrey),
+  );
+
+  static const HeaderViewButtonTheme fallback = HeaderViewButtonTheme(
+    style: fallbackStyle,
+  );
+
+  static HeaderViewButtonTheme theme(BuildContext context) =>
+      Theme.of(context).extension<HeaderViewButtonTheme>() ?? fallback;
+
+  @override
+  HeaderViewButtonTheme copyWith({ButtonStyle? style}) {
+    return HeaderViewButtonTheme(style: style ?? this.style);
+  }
+
+  @override
+  HeaderViewButtonTheme lerp(
+    covariant ThemeExtension<HeaderViewButtonTheme>? other,
+    double t,
+  ) {
+    if (other is! HeaderViewButtonTheme) {
+      return this;
+    }
+
+    return HeaderViewButtonTheme(
+      style:
+          ButtonStyle.lerp(style, other.style, t) ??
+          (t < 0.5 ? style : other.style),
+    );
   }
 }

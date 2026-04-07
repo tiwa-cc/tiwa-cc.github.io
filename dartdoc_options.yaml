@@ -1,0 +1,34 @@
+dartdoc:
+  output: docs/api
+  # categories:
+  #   aaa:
+  #     markdown: doc/AAA.md
+  #     displayName: AAA
+  # categoryOrder: [aaa]
+  exclude:
+    - doc
+    - documents
+    - test
+    - example
+    - web
+  # errors:
+  #   - missing-documentation
+  #   - ambiguous-doc-reference
+  #   - unresolved-doc-reference
+  # header:
+  # ignore:
+  #   - ambiguous-doc-reference
+  # favicon:
+  # footer:
+  # footerText:
+  # include:
+  #   - package:my_portfolio/<library_name>
+  # includeExternal:
+  link_to:
+    sdk: true
+  # linkToSource:
+  # warnings:
+  #   - tool-error
+  # nodoc: ["**/_*"]
+  # Package-level documentation uses the repository root README.md by default.
+  # showUndocumentedCategories: true

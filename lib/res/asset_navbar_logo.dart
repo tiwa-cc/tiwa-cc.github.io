@@ -11,9 +11,9 @@ final class AssetNavbarLogo extends ImageInterface {
   ImageType get type => ImageType.svgAsset;
 
   @override
-  Widget get image => SvgPicture.asset(path);
+  Widget get image => SvgPicture.asset(path, width: 40, height: 40);
   @override
-  double get height => 51.0;
+  double get height => 180.0;
   @override
-  double get width => 300.0;
+  double get width => 180.0;
 }

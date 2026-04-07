@@ -1,5 +1,5 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:my_portfolio/res/asset_path.dart';
 import 'package:my_portfolio/res/interfaces/image_type.dart';
 
 /// An interface for image resources in the application.
@@ -8,7 +8,7 @@ abstract class ImageInterface {
   String get path;
 
   /// Constructs the full path to the image resource.
-  String makePath(path) => "${(kDebugMode && kIsWeb) ? "" : "assets/"}$path";
+  String makePath(path) => resolveAssetPath(path);
 
   /// The type of the image resource.
   ImageType get type;

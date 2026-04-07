@@ -1,108 +1,53 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_layout_grid/flutter_layout_grid.dart';
 import 'package:my_portfolio/app/responsive/top_view_holder.dart';
-import 'package:my_portfolio/features/about/about_panel.dart';
-import 'package:my_portfolio/features/contact/contact_panel.dart';
-import 'package:my_portfolio/features/education/education_panel.dart';
-import 'package:my_portfolio/features/experience/experience_panel.dart';
-import 'package:my_portfolio/features/profile/profile_panel.dart';
-import 'package:my_portfolio/features/skill/core_skill_panel.dart';
-import 'package:my_portfolio/features/skill/software_skills_panel.dart';
+import 'package:my_portfolio/app/section.dart';
 
 class TopViewMd extends StatelessWidget {
   final TopViewHolder holder;
   const TopViewMd({super.key, required this.holder});
 
+  static const _sectionGap = 12.0;
+
   @override
   Widget build(BuildContext context) {
-    // +------------+-------------------------+
-    // | profile    | about                   |
-    // | Contact    |                         |
-    // |            +-------------------------+
-    // | Education  | Core Skills             |
-    // | Experience |                         |
-    // |            | Software Skills         |
-    // |            |                         |
-    // +------------+-------------------------+
-    return LayoutGrid(
-      areas: [
-        ['left', 'center_above'],
-        ['left', 'center_right'],
-      ].map((row) => row.join(' ')).join('\n'),
-      columnSizes: [1.fr, 2.fr],
-      rowSizes: [120.0.px, auto],
-      columnGap: 12,
-      rowGap: 12,
+    // +------------+------------+
+    // | profile    | about      |
+    // +------------+------------+
+    // | contents                |
+    // +------------+------------+
+    // | strengths  | skills     |
+    // +------------+------------+
+    // | background              |
+    // +------------+------------+
+    // | contact                 |
+    // +------------+------------+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        ...[
-          Column(
-            children: [
-              SizedBox(height: 32.0),
-              profileCard(),
-              SizedBox(height: 32.0),
-              contactCard(),
-              SizedBox(height: 32.0),
-              educationCard(),
-              experienceCard(),
-            ],
-          ).inGridArea('left'),
-        ],
-        ...[
-          aboutCard().inGridArea('center_above'),
-          Column(
-            children: [coreSkillsCard(), softwareSkillsCard()],
-          ).inGridArea('center_right'),
-        ],
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Expanded(flex: 5, child: holder.getCard(Section.profile)),
+            const SizedBox(width: _sectionGap),
+            Expanded(flex: 4, child: holder.getCard(Section.about)),
+          ],
+        ),
+        const SizedBox(height: _sectionGap),
+        holder.getCard(Section.contents),
+        const SizedBox(height: _sectionGap),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Expanded(child: holder.getCard(Section.coreSkills)),
+            const SizedBox(width: _sectionGap),
+            Expanded(child: holder.getCard(Section.softwareSkills)),
+          ],
+        ),
+        const SizedBox(height: _sectionGap),
+        holder.getCard(Section.experience),
+        const SizedBox(height: _sectionGap),
+        holder.getCard(Section.contact),
       ],
-    );
-  }
-
-  Widget aboutCard() {
-    return AboutPanel(
-      key: holder.aboutGlobalKey,
-      onHeader: holder.scrollViewHeader,
-    );
-  }
-
-  Widget profileCard() {
-    return ProfilePanel(
-      key: holder.profileGlobalKey,
-      onHeader: holder.scrollViewHeader,
-    );
-  }
-
-  Widget contactCard() {
-    return ContactPanel(
-      key: holder.contactGlobalKey,
-      onHeader: holder.scrollViewHeader,
-    );
-  }
-
-  Widget educationCard() {
-    return EducationPanel(
-      // key: holder.skillGlobalKey,
-      onHeader: holder.scrollViewHeader,
-    );
-  }
-
-  Widget experienceCard() {
-    return ExperiencePanel(
-      // key: holder.aboutGlobalKey,
-      onHeader: holder.scrollViewHeader,
-    );
-  }
-
-  Widget coreSkillsCard() {
-    return CoreSkillPanel(
-      // key: holder.aboutGlobalKey,
-      onHeader: holder.scrollViewHeader,
-    );
-  }
-
-  Widget softwareSkillsCard() {
-    return SoftwareSkillsPanel(
-      // key: holder.aboutGlobalKey,
-      onHeader: holder.scrollViewHeader,
     );
   }
 }

@@ -7,7 +7,7 @@ final class SkillViewButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = L10n.of(context)!;
+    final l10n = L10n.of(context);
     final title = l10n.coreSkillTitle;
     return TextButton(onPressed: onPressed, child: Text(title));
   }

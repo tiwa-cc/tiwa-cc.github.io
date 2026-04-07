@@ -1,0 +1,48 @@
+{
+  "contents": [
+    {
+      "title": "Portfolio Platform",
+      "summary": "このポートフォリオ自体。経歴を並べる構成から、作品と進め方が伝わる構成へ情報設計を組み替えました。",
+      "tags": ["Flutter Web", "Design System", "GitHub Pages"],
+      "details": [
+        "役割: 情報設計、UI 実装、レスポンシブ調整を一通り担当。",
+        "判断: 作品、強み、背景の順で読める導線に再構成。",
+        "結果: 1 ページのままでも、職務経歴書よりポートフォリオとして読まれやすい形へ整理。"
+      ],
+      "links": [
+        {
+          "label": "公開サイト",
+          "url": "https://tiwa-cc.github.io/",
+          "kind": "live"
+        },
+        {
+          "label": "リポジトリ",
+          "url": "https://github.com/tiwa-cc/tiwa-cc.github.io",
+          "kind": "source"
+        }
+      ]
+    },
+    {
+      "title": "Operations Dashboard Prototype",
+      "summary": "IoT 連携を前提に、状態把握と運用判断を素早く行うための管理画面プロトタイプ。",
+      "tags": ["Laravel", "AWS", "MQTT"],
+      "details": [
+        "役割: 要件整理、画面と API の設計、バックエンド実装方針を担当。",
+        "判断: デバイス状態、アラート、操作履歴を同じ導線で追える構成を優先。",
+        "結果: 運用者が確認と一次対応をブラウザ上で完結できる土台を整備。"
+      ],
+      "links": []
+    },
+    {
+      "title": "Mobile Companion App",
+      "summary": "現場利用を想定したモバイルアプリの実装検証。ネイティブ連携を含む UX の擦り合わせに注力しました。",
+      "tags": ["Flutter", "Kotlin", "Swift"],
+      "details": [
+        "役割: 画面実装、ネイティブ連携、検証フロー整備を担当。",
+        "判断: 端末差異を吸収しやすい責務分離と、ローカルで再現できる検証手順を重視。",
+        "結果: 実装だけでなく、継続的に改善できる開発フローを整備。"
+      ],
+      "links": []
+    }
+  ]
+}

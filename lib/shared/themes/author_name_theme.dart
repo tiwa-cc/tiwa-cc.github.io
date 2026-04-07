@@ -1,17 +1,39 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:theme_extensions_gen_annotations/theme_extensions_gen_annotations.dart';
 
-part 'author_name_theme.g.dart';
+final class AuthorNameTheme extends ThemeExtension<AuthorNameTheme> {
+  const AuthorNameTheme({required this.style});
 
-@ThemeExtensionTemplate()
-abstract interface class AuthorNameTheme extends ThemeExtension<AuthorNameTheme>
-    with _$AuthorNameThemeMixin, Diagnosticable {
-  const factory AuthorNameTheme({required TextStyle style}) = _$AuthorNameTheme;
-}
+  final TextStyle style;
 
-extension AuthorNameThemeExt on AuthorNameTheme {
-  static AuthorNameTheme? theme(BuildContext context) {
-    return Theme.of(context).extension<AuthorNameTheme>();
+  static const TextStyle fallbackStyle = TextStyle(
+    fontSize: 24,
+    letterSpacing: 2.0,
+    fontWeight: FontWeight.bold,
+    fontStyle: FontStyle.italic,
+    decoration: TextDecoration.underline,
+  );
+
+  static const AuthorNameTheme fallback = AuthorNameTheme(style: fallbackStyle);
+
+  static AuthorNameTheme theme(BuildContext context) =>
+      Theme.of(context).extension<AuthorNameTheme>() ?? fallback;
+
+  @override
+  AuthorNameTheme copyWith({TextStyle? style}) {
+    return AuthorNameTheme(style: style ?? this.style);
+  }
+
+  @override
+  AuthorNameTheme lerp(
+    covariant ThemeExtension<AuthorNameTheme>? other,
+    double t,
+  ) {
+    if (other is! AuthorNameTheme) {
+      return this;
+    }
+
+    return AuthorNameTheme(
+      style: TextStyle.lerp(style, other.style, t) ?? style,
+    );
   }
 }

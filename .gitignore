@@ -4,6 +4,7 @@
 *.pyc
 *.swp
 .DS_Store
+.codex
 .atom/
 .build/
 .buildlog/
@@ -47,3 +48,6 @@ app.*.map.json
 # auto generated files
 *.g.dart
 *.freezed.dart
+
+# temp files
+temp/
