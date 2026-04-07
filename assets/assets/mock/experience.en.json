@@ -1,0 +1,53 @@
+{
+  "experienceAreas": [
+    {
+      "title": "Web / Product Delivery",
+      "summary": "Delivery that connects requirements through operations",
+      "startedAt": "2020s",
+      "endedAt": "Present",
+      "highlights": [
+        "Worked across admin interfaces, APIs, and operations from requirement clarification through improvement work.",
+        "Designed with both data flow and day-to-day operations in mind for externally connected systems.",
+        "In small teams, also handled technology selection, reviews, and delivery control."
+      ],
+      "technologies": [
+        "Web Frontend",
+        "Backend / API",
+        "Cloud / Infrastructure",
+        "Data / Storage"
+      ]
+    },
+    {
+      "title": "Platform / System Delivery",
+      "summary": "Quality and verification work in constrained environments",
+      "startedAt": "2010s",
+      "endedAt": "Early 2020s",
+      "highlights": [
+        "Worked on implementation as well as verification efficiency and evaluation improvements in constrained environments.",
+        "Handled review and delivery coordination alongside technically deep tasks.",
+        "Helped align teams that were working from very different assumptions."
+      ],
+      "technologies": [
+        "System Integration",
+        "Testing / Quality",
+        "Platform Development"
+      ]
+    },
+    {
+      "title": "Mobile / Client Experience",
+      "summary": "Implementation and validation close to the end-user experience",
+      "startedAt": "Late 2000s",
+      "endedAt": "Early 2020s",
+      "highlights": [
+        "Worked on UI implementation, presentation control, and client-side integrations close to the user experience layer.",
+        "Built practical verification flows for hard-to-reproduce issues and environment differences.",
+        "That foundation continues to support current cross-platform delivery."
+      ],
+      "technologies": [
+        "Mobile Apps",
+        "UI Implementation",
+        "Native Integration"
+      ]
+    }
+  ]
+}

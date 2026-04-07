@@ -1,0 +1,48 @@
+{
+  "contents": [
+    {
+      "title": "Portfolio Platform",
+      "summary": "This site itself. I reworked it from a resume-like page into a portfolio structure that puts work and delivery approach first.",
+      "tags": ["Flutter Web", "Design System", "GitHub Pages"],
+      "details": [
+        "Role: Owned information architecture, UI implementation, and responsive tuning.",
+        "Decision: Reordered the page to lead with work, strengths, and delivery context instead of chronological history.",
+        "Outcome: The same single-page shell now reads more like a portfolio than a resume."
+      ],
+      "links": [
+        {
+          "label": "Open Site",
+          "url": "https://tiwa-cc.github.io/",
+          "kind": "live"
+        },
+        {
+          "label": "Repository",
+          "url": "https://github.com/tiwa-cc/tiwa-cc.github.io",
+          "kind": "source"
+        }
+      ]
+    },
+    {
+      "title": "Operations Dashboard Prototype",
+      "summary": "A dashboard prototype designed for fast operational decisions in an IoT-connected workflow.",
+      "tags": ["Laravel", "AWS", "MQTT"],
+      "details": [
+        "Role: Covered requirement clarification, screen and API design, and backend implementation direction.",
+        "Decision: Prioritized a flow where device state, alerts, and action history can be traced without context switching.",
+        "Outcome: Prepared a base where operators can confirm status and perform first-response actions from one browser workflow."
+      ],
+      "links": []
+    },
+    {
+      "title": "Mobile Companion App",
+      "summary": "A mobile implementation study for field use, with particular focus on UX decisions that depend on native integration.",
+      "tags": ["Flutter", "Kotlin", "Swift"],
+      "details": [
+        "Role: Implemented screens, handled native integration, and set up the local verification flow.",
+        "Decision: Emphasized responsibility boundaries that absorb device differences and keep troubleshooting reproducible.",
+        "Outcome: Improved not only the app implementation but also the workflow for ongoing iteration."
+      ],
+      "links": []
+    }
+  ]
+}
