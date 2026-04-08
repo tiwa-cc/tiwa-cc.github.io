@@ -1,13 +1,13 @@
 {
   "contents": [
     {
-      "title": "Portfolio Platform",
-      "summary": "このポートフォリオ自体。経歴を並べる構成から、作品と進め方が伝わる構成へ情報設計を組み替えました。",
-      "tags": ["Flutter Web", "Design System", "GitHub Pages"],
+      "title": "tiwa-cc.github.io",
+      "summary": "Flutter Web で構築しているポートフォリオサイト。代表的な取り組み、強み、進め方、対応技術、バックグラウンド、連絡先を 1 ページでレスポンシブ表示します。",
+      "tags": ["Flutter Web", "Riverpod", "GitHub Pages"],
       "details": [
-        "役割: 情報設計、UI 実装、レスポンシブ調整を一通り担当。",
-        "判断: 作品、強み、背景の順で読める導線に再構成。",
-        "結果: 1 ページのままでも、職務経歴書よりポートフォリオとして読まれやすい形へ整理。"
+        "構成: Profile / Contents / Core Skills / About / Software Skills / Experience / Contact を 1 ページで表示。",
+        "実装: RawClient と assets/mock/*.json を疑似 API として使い、初回ロード時は timeout と自動再試行を制御。",
+        "公開: GitHub Pages へ flutter build web --wasm --base-href / でデプロイ。"
       ],
       "links": [
         {
@@ -23,26 +23,43 @@
       ]
     },
     {
-      "title": "Operations Dashboard Prototype",
-      "summary": "IoT 連携を前提に、状態把握と運用判断を素早く行うための管理画面プロトタイプ。",
-      "tags": ["Laravel", "AWS", "MQTT"],
+      "title": "Workforce Manager",
+      "summary": "勤怠入力、ログインユーザ管理、レポート基盤を持つ勤怠管理フロントエンドのポートフォリオ。現在はモックデータを用いたフロントエンド先行開発段階です。",
+      "tags": ["React", "TypeScript", "Hexagonal Architecture"],
       "details": [
-        "役割: 要件整理、画面と API の設計、バックエンド実装方針を担当。",
-        "判断: デバイス状態、アラート、操作履歴を同じ導線で追える構成を優先。",
-        "結果: 運用者が確認と一次対応をブラウザ上で完結できる土台を整備。"
+        "範囲: user information、attendance input、report screen を mock repository で構成。",
+        "採用: React + Vite + TypeScript、Zustand、React Query、shadcn/ui + Tailwind CSS v4。",
+        "品質: Vitest + Testing Library、ja / en の l10n、aria-live と aria-busy による最小 a11y を整備。"
       ],
-      "links": []
+      "links": [
+        {
+          "label": "デモ",
+          "url": "https://tiwa-cc-workforce.vercel.app/",
+          "kind": "live"
+        },
+        {
+          "label": "リポジトリ",
+          "url": "https://github.com/tiwa-cc/tiwa-cc.workforce",
+          "kind": "source"
+        }
+      ]
     },
     {
-      "title": "Mobile Companion App",
-      "summary": "現場利用を想定したモバイルアプリの実装検証。ネイティブ連携を含む UX の擦り合わせに注力しました。",
-      "tags": ["Flutter", "Kotlin", "Swift"],
+      "title": "tiwa-cc-resume-template",
+      "summary": "職務経歴書、スキルシート、応募用資料を管理するための template repository。事実データと見せ方を分離し、提出先ごとの差分を管理しやすくする構成です。",
+      "tags": ["Template Repo", "Structured Data", "Resume Workflow"],
       "details": [
-        "役割: 画面実装、ネイティブ連携、検証フロー整備を担当。",
-        "判断: 端末差異を吸収しやすい責務分離と、ローカルで再現できる検証手順を重視。",
-        "結果: 実装だけでなく、継続的に改善できる開発フローを整備。"
+        "目的: 職務経歴の事実を一元管理し、提出先ごとに見せ方を変えやすくする。",
+        "設計: data を正本、templates を表現ルール、targets を提出先差分として分離。",
+        "運用: 公開可能な template repository として配布し、fork 後は private repository で使う前提。"
       ],
-      "links": []
+      "links": [
+        {
+          "label": "リポジトリ",
+          "url": "https://github.com/tiwa-cc/tiwa-cc-resume-template",
+          "kind": "source"
+        }
+      ]
     }
   ]
 }
