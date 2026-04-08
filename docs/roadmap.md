@@ -12,7 +12,7 @@
 - Contact の未接続項目に実リンクまたは非表示条件を入れる
 
 完了:
-- `Contents` は featured work カード表示と外部導線へ移行済み
+- `Contents` は public repo の README をもとに featured work カード表示と外部導線へ移行済み
 - `AboutPanel` は mock JSON 経由の実文面表示へ移行済み
 - `CoreSkillPanel` は mock JSON 経由の 6 項目箇条書き + 1 行説明表示へ移行済み
 - `SoftwareSkillsPanel` は `software_skill.json` + catalog / presenter 方式で capability snapshot 表示へ移行済み

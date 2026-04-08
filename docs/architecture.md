@@ -102,7 +102,7 @@ flowchart TB
 - `ProfilePanel`、`AboutPanel`、`ContactPanel`、`ExperiencePanel`、`CoreSkillPanel`、`SoftwareSkillsPanel`、`ContentsPanel` が主な構成要素です。
 - `ProfilePanel` は似顔絵、肩書き、短い価値提案、フォーカスチップをまとめた intro / hero block です。
 - `ProfilePanel` は profile 画像に image semantics、ハンドル名に header semantics を付けています。
-- `ContentShowcase` は独立セクションではなく、`ContentsPanel` の中で `content_showcase.[ja/en].json` 由来の featured work カードと外部リンクを表示します。
+- `ContentShowcase` は独立セクションではなく、`ContentsPanel` の中で public repo README ベースの `content_showcase.[ja/en].json` 由来 featured work カードと外部リンクを表示します。
 - `header` feature には `HeaderView`、`HeaderMotion`、`HeaderPopupMenu`、`SectionViewButton` があり、ヒーローヘッダの描画と `xs` / `sm` 向けセクションジャンプ UI を担当します。
 - `footer` feature は `FooterView` に責務を絞り、コピーライト文字列とブランドワードマークでページ末尾を閉じます。
 - 背景写真のレスポンシブなトリミングは `HeaderBackgroundStyle` が担当します。
@@ -167,7 +167,7 @@ flowchart LR
 - `RawAccessor` はメモリ内ストリームで、ロード済み最新値を late subscriber に再送します。
 - `RawClient` は locale 切替中の古い読み込み結果を破棄し、現在 locale の値だけを storage に反映します。
 - `DBAccessor` は将来の永続化置き場です。
-- `About`、`Contents`、`CoreSkill`、`Experience` は locale 別 mock JSON から取得し、storage 経由で UI に渡します。
+- `About`、`Contents`、`CoreSkill`、`Experience` は locale 別 mock JSON から取得し、storage 経由で UI に渡します。`Contents` の元文面は public repo README をもとに管理しています。
 - `SoftwareSkill` は locale 非依存の単一 mock JSON から取得し、presentation 層でカテゴリやアイコンを解決します。
 - `pubspec.yaml` では `assets/mock/` を明示登録しており、Web ビルド成果物では `assets/assets/mock/` に展開されます。
 - `lib/res/asset_path.dart` が画像と mock JSON の実行時パス解決を共通化します。
@@ -301,7 +301,7 @@ Riverpod の Provider は限定的です。
 - `assets/mock/about.{ja,en}.json`
   開発時のロケール別 About サンプル
 - `assets/mock/content_showcase.{ja,en}.json`
-  開発時のロケール別 Contents サンプル
+  開発時のロケール別 Contents データ。public repo README ベースの featured work を保持
 - `assets/mock/core_skill.{ja,en}.json`
   開発時のロケール別 CoreSkill サンプル
 - `assets/mock/software_skill.json`

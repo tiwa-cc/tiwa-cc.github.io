@@ -3,11 +3,11 @@
 Flutter Web で構築しているポートフォリオサイトです。  
 ヒーローヘッダ、イントロ、代表的な取り組み、強み、進め方、対応技術、バックグラウンド、連絡先を 1 ページで表示し、画面幅に応じてレイアウトを切り替えます。
 
-2026-04-07 時点のユーザー向けセクションは `Profile`、`Contents`、`Core Skills`、`About`、`Software Skills`、`Experience`、`Contact` です。  
+2026-04-09 時点のユーザー向けセクションは `Profile`、`Contents`、`Core Skills`、`About`、`Software Skills`、`Experience`、`Contact` です。  
 ヘッダーには `xs` / `sm` 幅で全セクションへのジャンプメニューがあり、全幅共通で言語切替と開発用のレイアウト幅プレビュー切替があります。
 
 現時点では `About`、`Contents`、`CoreSkill`、`SoftwareSkill`、`Experience` がアセット JSON を経由してデータを読み込みます。  
-実 API、永続化、本文コンテンツの一部はまだダミー実装です。
+`Contents` は `tiwa-cc` の public repo README をもとにした featured work を表示し、実 API と永続化はまだ未実装です。
 
 ## 技術スタック
 
@@ -169,9 +169,9 @@ flutter run -d web-server
 - Riverpod による依存注入
 - 初回ロード時の timeout / 自動再試行 / 全体エラーオーバーレイ
 - `ProfilePanel` の hero 表示とアクセシビリティ対応
-- `About`、`CoreSkill`、`SoftwareSkill`、`Experience`、`Contents` のサンプル JSON 読み込み
+- `About`、`CoreSkill`、`SoftwareSkill`、`Experience` のアセット JSON 読み込み
 - `SoftwareSkillsPanel` の capability snapshot 表示と icon catalog
-- `Contents` の featured work カード表示と外部導線
+- `Contents` の public repo README ベース featured work カード表示と外部導線
 - セクション単位のスクロールジャンプとアクティブ判定
 - `ExperiencePanel`、`ProfilePanel`、`TopView` などの主要 Widget test
 
@@ -196,6 +196,6 @@ flutter run -d web-server
 
 ## 注意点
 
-- `docs/` の内容は、2026-04-07 時点の実装をもとに整理しています。
+- `docs/` の内容は、2026-04-09 時点の実装をもとに整理しています。
 - 既存コードにはプレースホルダや TODO が残っているため、README の説明は「現状の仕様」を優先しています。
 - `dartdoc_options.yaml` は `doc/README.md` を参照していますが、この README 群は `docs/` に置いています。生成ドキュメントを整える場合は参照先の見直しが必要です。

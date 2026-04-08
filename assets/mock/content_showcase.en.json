@@ -1,13 +1,13 @@
 {
   "contents": [
     {
-      "title": "Portfolio Platform",
-      "summary": "This site itself. I reworked it from a resume-like page into a portfolio structure that puts work and delivery approach first.",
-      "tags": ["Flutter Web", "Design System", "GitHub Pages"],
+      "title": "tiwa-cc.github.io",
+      "summary": "A portfolio site built with Flutter Web. It presents featured work, strengths, delivery approach, technical capabilities, background, and contact information in a single responsive page.",
+      "tags": ["Flutter Web", "Riverpod", "GitHub Pages"],
       "details": [
-        "Role: Owned information architecture, UI implementation, and responsive tuning.",
-        "Decision: Reordered the page to lead with work, strengths, and delivery context instead of chronological history.",
-        "Outcome: The same single-page shell now reads more like a portfolio than a resume."
+        "Structure: Shows Profile, Contents, Core Skills, About, Software Skills, Experience, and Contact in one page.",
+        "Implementation: Uses RawClient and assets/mock/*.json as a mock API, with timeout and automatic retry during the initial load.",
+        "Deployment: Published to GitHub Pages with flutter build web --wasm --base-href /."
       ],
       "links": [
         {
@@ -23,26 +23,43 @@
       ]
     },
     {
-      "title": "Operations Dashboard Prototype",
-      "summary": "A dashboard prototype designed for fast operational decisions in an IoT-connected workflow.",
-      "tags": ["Laravel", "AWS", "MQTT"],
+      "title": "Workforce Manager",
+      "summary": "A workforce management frontend portfolio covering attendance input, logged-in user management, and a report foundation. The current scope is a frontend-first build backed by mock data.",
+      "tags": ["React", "TypeScript", "Hexagonal Architecture"],
       "details": [
-        "Role: Covered requirement clarification, screen and API design, and backend implementation direction.",
-        "Decision: Prioritized a flow where device state, alerts, and action history can be traced without context switching.",
-        "Outcome: Prepared a base where operators can confirm status and perform first-response actions from one browser workflow."
+        "Scope: Includes user information, attendance input, and a report screen backed by mock repositories.",
+        "Stack: React + Vite + TypeScript, Zustand, React Query, and shadcn/ui + Tailwind CSS v4.",
+        "Quality: Adds Vitest + Testing Library, ja / en l10n, and baseline a11y with aria-live and aria-busy."
       ],
-      "links": []
+      "links": [
+        {
+          "label": "Demo",
+          "url": "https://tiwa-cc-workforce.vercel.app/",
+          "kind": "live"
+        },
+        {
+          "label": "Repository",
+          "url": "https://github.com/tiwa-cc/tiwa-cc.workforce",
+          "kind": "source"
+        }
+      ]
     },
     {
-      "title": "Mobile Companion App",
-      "summary": "A mobile implementation study for field use, with particular focus on UX decisions that depend on native integration.",
-      "tags": ["Flutter", "Kotlin", "Swift"],
+      "title": "tiwa-cc-resume-template",
+      "summary": "A template repository for managing resumes, skill sheets, and application documents. It separates source facts from presentation rules so target-specific variations stay manageable.",
+      "tags": ["Template Repo", "Structured Data", "Resume Workflow"],
       "details": [
-        "Role: Implemented screens, handled native integration, and set up the local verification flow.",
-        "Decision: Emphasized responsibility boundaries that absorb device differences and keep troubleshooting reproducible.",
-        "Outcome: Improved not only the app implementation but also the workflow for ongoing iteration."
+        "Purpose: Centralizes career facts and makes it easier to adjust outputs for each target.",
+        "Design: Separates data as the source of truth, templates as presentation rules, and targets as per-destination differences.",
+        "Operation: Distributed as a public template repository, then intended to be forked into a private repository for real personal data."
       ],
-      "links": []
+      "links": [
+        {
+          "label": "Repository",
+          "url": "https://github.com/tiwa-cc/tiwa-cc-resume-template",
+          "kind": "source"
+        }
+      ]
     }
   ]
 }

@@ -1,7 +1,7 @@
 # Documentation Index
 
 このディレクトリは、`tiwa-cc.github.io` の実装状況をもとに設計メモを整理したものです。  
-コードの理想像ではなく、2026-04-07 時点の実装と未実装をそのまま反映しています。
+コードの理想像ではなく、2026-04-09 時点の実装と未実装をそのまま反映しています。
 
 現行のユーザー向けセクションは `Profile`、`Contents`、`Core Skills`、`About`、`Software Skills`、`Experience`、`Contact` です。
 
